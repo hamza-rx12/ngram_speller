@@ -6,7 +6,7 @@ def main():
     ngram_size = 5
     file = "data/big_data.txt"
     ml = ngram_model(file, ngram_size)
-    text = "i get hamza hamza"
+    text = "i havn gott monee"
 
     text = ("<s> " * (ngram_size - 1) + text + " </s>").split()
     print("text:", text)
@@ -32,8 +32,9 @@ def main():
             print(f"Word '{wrong}' incorrect. Suggestions: {sorted_probs}")
 
             # Replace the word:
-            text[i] = list(sorted_probs[0].keys())[0]
-            print(text[i])
+            if len(sorted_probs) > 0:
+                text[i] = list(sorted_probs[0].keys())[0]
+                print(text[i])
 
             print(text)
 
