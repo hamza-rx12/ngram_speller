@@ -6,7 +6,7 @@ def main():
     ngram_size = 5
     file = "data/big_data.txt"
     ml = ngram_model(file, ngram_size)
-    text = "i havn gott monee"
+    text = "i havn gott "
 
     text = ("<s> " * (ngram_size - 1) + text + " </s>").split()
     print("text:", text)
